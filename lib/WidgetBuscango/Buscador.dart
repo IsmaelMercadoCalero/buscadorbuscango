@@ -5,8 +5,7 @@ class Buscador extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     double ancho = size.width;
-    return Center(
-        child: SizedBox(
+    return SizedBox(
       width: size.width * 0.45,
       height: size.height * 0.1,
       child: Column(
@@ -42,6 +41,6 @@ class Buscador extends StatelessWidget {
           ),
         ],
       ),
-    ));
+    );
   }
 }

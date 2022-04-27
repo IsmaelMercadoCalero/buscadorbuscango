@@ -17,9 +17,14 @@ class UltimosMiembros extends StatelessWidget {
           Expanded(
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: 4,
+                itemCount: 3,
                 itemBuilder: (BuildContext context, int index) =>
-                    _tarjetaExpositor()),
+                    GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, 'TarjetaBuscada',
+                              arguments: null);
+                        },
+                        child: _tarjetaExpositor())),
           ),
         ],
       ),
@@ -31,34 +36,37 @@ class _tarjetaExpositor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Container(
-      width: size.width * 0.2,
-      height: size.height * 0.1,
-      decoration: BoxDecoration(
-        color: Colors.blueGrey[100],
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey,
-            spreadRadius: 5,
-            offset: Offset(7, 7),
-            blurRadius: 6,
-          ),
-        ],
-      ),
-      margin: EdgeInsets.symmetric(horizontal: 65, vertical: 15),
-      child: Column(
-        children: [
-          Imagen(size),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 5),
-            child: ContenedorTextos(size),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 5),
-            child: ContenedorTag(size),
-          )
-        ],
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: Container(
+        width: size.width * 0.2,
+        height: size.height * 0.1,
+        decoration: BoxDecoration(
+          color: Colors.blueGrey[100],
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              spreadRadius: 5,
+              offset: Offset(7, 7),
+              blurRadius: 6,
+            ),
+          ],
+        ),
+        margin: EdgeInsets.symmetric(horizontal: 65, vertical: 15),
+        child: Column(
+          children: [
+            Imagen(size),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 5),
+              child: ContenedorTextos(size),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 5),
+              child: ContenedorTag(size),
+            )
+          ],
+        ),
       ),
     );
   }

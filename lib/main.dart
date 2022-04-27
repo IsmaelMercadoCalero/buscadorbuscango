@@ -1,3 +1,4 @@
+import 'package:buscadorbuscango/ClasesPrincipales/BuscangoTarjeta.dart';
 import 'package:flutter/material.dart';
 
 import 'ClasesPrincipales/Buscango.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         //Asignamos la clase de la primera ruta
         'home': (_) => Buscango(),
         'Buscado': (_) => BuscangoBuscar(),
+        'TarjetaBuscada': (_) => BuscangoTarjeta(),
       },
     );
   }
