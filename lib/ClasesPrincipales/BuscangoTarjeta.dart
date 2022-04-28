@@ -153,39 +153,46 @@ class _BuscangoTarjetaState extends State<BuscangoTarjeta>
                           ),
                           Container(
                             width: ancho * 0.4,
-                            child: Column(
-                              children: [
-                                DefaultTabController(
-                                  length: 4,
-                                  child: TabBar(
-                                    indicatorColor: colorGeneral,
-                                    labelColor: colorGeneral,
-                                    indicatorWeight: 8,
-                                    labelStyle: TextStyle(fontSize: 15),
-                                    tabs: [
-                                      Tab(
-                                        text: 'Productos/Servicios',
-                                      ),
-                                      Tab(
-                                        text: 'Galería',
-                                      ),
-                                      Tab(
-                                        text: 'Quíenes somos',
-                                      ),
-                                      Tab(
-                                        text: 'Contacto',
-                                      ),
-                                    ],
-                                    controller: controller,
+                            color: Colors.black,
+                            child: DefaultTabController(
+                              length: 4,
+                              child: TabBar(
+                                indicatorColor: colorGeneral,
+                                labelColor: colorGeneral,
+                                indicatorWeight: 8,
+                                labelStyle: TextStyle(fontSize: 15),
+                                tabs: [
+                                  Tab(
+                                    text: 'Productos/Servicios',
                                   ),
-                                ),
-                                TabBarView(
-                                  controller: controller,
-                                  children: [],
-                                )
-                              ],
+                                  Tab(
+                                    text: 'Galería',
+                                  ),
+                                  Tab(
+                                    text: 'Quíenes somos',
+                                  ),
+                                  Tab(
+                                    text: 'Contacto',
+                                  ),
+                                ],
+                                controller: controller,
+                              ),
                             ),
                           ),
+                          Container(
+                            width: double.infinity,
+                            height: alto * 1,
+                            color: Colors.red,
+                            child: TabBarView(
+                              controller: controller,
+                              children: [
+                                Text('Hola 1'),
+                                Text('Hola 2'),
+                                Text('Hola 3'),
+                                Text('Hola 4'),
+                              ],
+                            ),
+                          )
                         ],
                       ),
                     )
