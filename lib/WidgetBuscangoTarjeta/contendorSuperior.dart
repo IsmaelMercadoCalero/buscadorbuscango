@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../ClasesPrincipales/Buscango.dart';
-import '../ClasesPrincipales/Buscango.dart';
 import '../WidgetBuscango/Buscador.dart';
 
 TextStyle textBuscango = TextStyle(
