@@ -2,6 +2,7 @@ import 'package:buscadorbuscango/WidgetBuscangoTarjeta/WidgetTarjetaTienda/parte
 import 'package:flutter/material.dart';
 
 import '../ClasesPrincipales/Buscango.dart';
+import 'WidgetTarjetaTienda/controladorTablas.dart';
 
 String categoriaPrincipal = "Categoría";
 List<String> listaCategoria = ['Categoría 1', 'Categoría 2', 'Categoría 3'];
@@ -51,8 +52,8 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
     double ancho = size.width;
     double alto = size.height;
     return Container(
-      width: size.width * 0.8,
-      height: size.height * 2,
+      width: ancho * 0.8,
+      height: alto * 2,
       decoration: BoxDecoration(
         color: Colors.blueGrey[100],
         borderRadius: BorderRadius.circular(20),
@@ -73,290 +74,14 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
             child: Column(
               children: [
                 partesuperiorTarjeta(),
-                Container(
-                  width: ancho * 0.4,
-                  child: DefaultTabController(
-                    length: 4,
-                    child: TabBar(
-                      indicatorColor: colorGeneral,
-                      labelColor: colorGeneral,
-                      indicatorWeight: 8,
-                      labelStyle:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                      tabs: [
-                        Tab(
-                          text: 'Productos/Servicios',
-                        ),
-                        Tab(
-                          text: 'Galería',
-                        ),
-                        Tab(
-                          text: 'Quíenes somos',
-                        ),
-                        Tab(
-                          text: 'Contacto',
-                        ),
-                      ],
-                      controller: controller,
-                    ),
-                  ),
-                ),
+                controladorTablas(ancho, colorGeneral, controller),
                 Container(
                   width: double.infinity,
                   height: alto * 1.5,
                   child: TabBarView(
                     controller: controller,
                     children: [
-                      Container(
-                        height: alto * 1,
-                        width: ancho * 1,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsets.symmetric(vertical: alto * 0.1),
-                              child: SizedBox(
-                                width: size.width * 0.45,
-                                height: size.height * 0.06,
-                                child: Column(
-                                  children: [
-                                    Material(
-                                      elevation: 20,
-                                      shadowColor: Colors.black,
-                                      borderRadius: BorderRadius.circular(30),
-                                      child: TextField(
-                                        decoration: InputDecoration(
-                                          border: OutlineInputBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(30.0),
-                                          ),
-                                          hintText:
-                                              '  Buscar producto en "nombre tienda"',
-                                          suffixIcon: MouseRegion(
-                                            cursor: SystemMouseCursors.click,
-                                            child: GestureDetector(
-                                              child: Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                    horizontal: ancho * 0.01),
-                                                child: Icon(
-                                                  Icons.search,
-                                                  color: Colors.black,
-                                                  size: 25,
-                                                ),
-                                              ),
-                                              onTap: () {},
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: ancho * 0.01),
-                                  child: ClipRRect(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(50)),
-                                    child: Container(
-                                      color: Colors.white,
-                                      width: size.width * 0.06,
-                                      height: size.height * 0.03,
-                                      child: Center(
-                                        child: Container(
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 5),
-                                          child: DropdownButton(
-                                            underline: SizedBox(),
-                                            items: listaCategoria
-                                                .map((String valorLista) {
-                                              return DropdownMenuItem(
-                                                  value: valorLista,
-                                                  child: Text(valorLista));
-                                            }).toList(),
-                                            onChanged: (value) => {
-                                              setState(() {
-                                                categoriaPrincipal =
-                                                    value.toString();
-                                              })
-                                            },
-                                            hint: Text(
-                                              categoriaPrincipal,
-                                              style: TextStyle(
-                                                  color: colorGeneral),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: alto * 0.01),
-                                  child: ClipRRect(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(50)),
-                                    child: Container(
-                                      color: Colors.white,
-                                      width: size.width * 0.06,
-                                      height: size.height * 0.03,
-                                      child: Center(
-                                        child: Container(
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 5),
-                                          child: DropdownButton(
-                                            underline: SizedBox(),
-                                            items: listasubCategoria
-                                                .map((String valorLista) {
-                                              return DropdownMenuItem(
-                                                  value: valorLista,
-                                                  child: Text(valorLista));
-                                            }).toList(),
-                                            onChanged: (value) => {
-                                              setState(() {
-                                                subcategoriaPrincipal =
-                                                    value.toString();
-                                              })
-                                            },
-                                            hint: Text(
-                                              subcategoriaPrincipal,
-                                              style: TextStyle(
-                                                  color: colorGeneral),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: ancho * 0.01),
-                                  child: ClipRRect(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(50)),
-                                    child: Container(
-                                      color: Colors.white,
-                                      width: size.width * 0.06,
-                                      height: size.height * 0.03,
-                                      child: Center(
-                                        child: Container(
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 5),
-                                          child: DropdownButton(
-                                            underline: SizedBox(),
-                                            items: listaMarca
-                                                .map((String valorMarca) {
-                                              return DropdownMenuItem(
-                                                  value: valorMarca,
-                                                  child: Text(valorMarca));
-                                            }).toList(),
-                                            onChanged: (value) => {
-                                              setState(() {
-                                                marcaPrincipal =
-                                                    value.toString();
-                                              })
-                                            },
-                                            hint: Text(
-                                              marcaPrincipal,
-                                              style: TextStyle(
-                                                  color: colorGeneral),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: ancho * 0.01),
-                                  child: ClipRRect(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(50)),
-                                    child: Container(
-                                      color: Colors.white,
-                                      width: size.width * 0.06,
-                                      height: size.height * 0.03,
-                                      child: Center(
-                                        child: Container(
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 5),
-                                          child: DropdownButton(
-                                            underline: SizedBox(),
-                                            items: listaModelo
-                                                .map((String valorModelo) {
-                                              return DropdownMenuItem(
-                                                  value: valorModelo,
-                                                  child: Text(valorModelo));
-                                            }).toList(),
-                                            onChanged: (value) => {
-                                              setState(() {
-                                                modeloPrincipal =
-                                                    value.toString();
-                                              })
-                                            },
-                                            hint: Text(
-                                              modeloPrincipal,
-                                              style: TextStyle(
-                                                  color: colorGeneral),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: ancho * 0.01),
-                                  child: ClipRRect(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(50)),
-                                    child: Container(
-                                      color: Colors.white,
-                                      width: size.width * 0.06,
-                                      height: size.height * 0.03,
-                                      child: Center(
-                                        child: Container(
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 5),
-                                          child: DropdownButton(
-                                            underline: SizedBox(),
-                                            items: listaPrecio
-                                                .map((String valorPrecio) {
-                                              return DropdownMenuItem(
-                                                  value: valorPrecio,
-                                                  child: Text(valorPrecio));
-                                            }).toList(),
-                                            onChanged: (value) => {
-                                              setState(() {
-                                                precioPricipal =
-                                                    value.toString();
-                                              })
-                                            },
-                                            hint: Text(
-                                              precioPricipal,
-                                              style: TextStyle(
-                                                  color: colorGeneral),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
+                      productosServicos(ancho, alto),
                       Text('Contenedor 2'),
                       Text('Contenedor 3'),
                       Text('Contenedor 4'),
@@ -367,6 +92,220 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
             ),
           )
         ],
+      ),
+    );
+  }
+
+  Widget productosServicos(double ancho, double alto) {
+    return Container(
+      height: alto * 1,
+      width: ancho * 1,
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: alto * 0.1),
+            child: SizedBox(
+              width: ancho * 0.45,
+              height: alto * 0.04,
+              child: buscador(ancho),
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: ancho * 0.01),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                  child: Container(
+                    color: Colors.white,
+                    width: ancho * 0.06,
+                    height: alto * 0.03,
+                    child: Center(
+                      child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 5),
+                        child: DropdownButton(
+                          underline: SizedBox(),
+                          items: listaCategoria.map((String valorLista) {
+                            return DropdownMenuItem(
+                                value: valorLista, child: Text(valorLista));
+                          }).toList(),
+                          onChanged: (value) => {
+                            setState(() {
+                              categoriaPrincipal = value.toString();
+                            })
+                          },
+                          hint: Text(
+                            categoriaPrincipal,
+                            style: TextStyle(color: colorGeneral),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: alto * 0.01),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                  child: Container(
+                    color: Colors.white,
+                    width: ancho * 0.06,
+                    height: alto * 0.03,
+                    child: Center(
+                      child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 5),
+                        child: DropdownButton(
+                          underline: SizedBox(),
+                          items: listasubCategoria.map((String valorLista) {
+                            return DropdownMenuItem(
+                                value: valorLista, child: Text(valorLista));
+                          }).toList(),
+                          onChanged: (value) => {
+                            setState(() {
+                              subcategoriaPrincipal = value.toString();
+                            })
+                          },
+                          hint: Text(
+                            subcategoriaPrincipal,
+                            style: TextStyle(color: colorGeneral),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: ancho * 0.01),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                  child: Container(
+                    color: Colors.white,
+                    width: ancho * 0.06,
+                    height: alto * 0.03,
+                    child: Center(
+                      child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 5),
+                        child: DropdownButton(
+                          underline: SizedBox(),
+                          items: listaMarca.map((String valorMarca) {
+                            return DropdownMenuItem(
+                                value: valorMarca, child: Text(valorMarca));
+                          }).toList(),
+                          onChanged: (value) => {
+                            setState(() {
+                              marcaPrincipal = value.toString();
+                            })
+                          },
+                          hint: Text(
+                            marcaPrincipal,
+                            style: TextStyle(color: colorGeneral),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: ancho * 0.01),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                  child: Container(
+                    color: Colors.white,
+                    width: ancho * 0.06,
+                    height: alto * 0.03,
+                    child: Center(
+                      child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 5),
+                        child: DropdownButton(
+                          underline: SizedBox(),
+                          items: listaModelo.map((String valorModelo) {
+                            return DropdownMenuItem(
+                                value: valorModelo, child: Text(valorModelo));
+                          }).toList(),
+                          onChanged: (value) => {
+                            setState(() {
+                              modeloPrincipal = value.toString();
+                            })
+                          },
+                          hint: Text(
+                            modeloPrincipal,
+                            style: TextStyle(color: colorGeneral),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: ancho * 0.01),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                  child: Container(
+                    color: Colors.white,
+                    width: ancho * 0.06,
+                    height: alto * 0.03,
+                    child: Center(
+                      child: Container(
+                        margin: EdgeInsets.symmetric(horizontal: 5),
+                        child: DropdownButton(
+                          underline: SizedBox(),
+                          items: listaPrecio.map((String valorPrecio) {
+                            return DropdownMenuItem(
+                                value: valorPrecio, child: Text(valorPrecio));
+                          }).toList(),
+                          onChanged: (value) => {
+                            setState(() {
+                              precioPricipal = value.toString();
+                            })
+                          },
+                          hint: Text(
+                            precioPricipal,
+                            style: TextStyle(color: colorGeneral),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buscador(double ancho) {
+    return Material(
+      elevation: 20,
+      shadowColor: Colors.black,
+      borderRadius: BorderRadius.circular(30),
+      child: TextField(
+        decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          hintText: '  Buscar producto en "nombre tienda"',
+          suffixIcon: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: ancho * 0.01),
+                child: Icon(
+                  Icons.search,
+                  color: Colors.black,
+                  size: 25,
+                ),
+              ),
+              onTap: () {},
+            ),
+          ),
+        ),
       ),
     );
   }
