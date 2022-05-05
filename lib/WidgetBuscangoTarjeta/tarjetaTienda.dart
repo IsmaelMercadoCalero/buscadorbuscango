@@ -1,7 +1,8 @@
 import 'package:buscadorbuscango/WidgetBuscangoTarjeta/WidgetTarjetaTienda/partesuperiorTarjeta.dart';
 import 'package:flutter/material.dart';
-
 import '../ClasesPrincipales/Buscango.dart';
+import '../WidgetBuscango/MasBuscados.dart';
+import 'WidgetTarjetaTienda/Tablas/galeria.dart';
 import 'WidgetTarjetaTienda/controladorTablas.dart';
 
 String categoriaPrincipal = "Categoría";
@@ -20,7 +21,7 @@ List<String> listaUbicacion = ['Ubucación 1', 'Ubucación 2', 'Ubucación 3'];
 String marcaPrincipal = "Marca";
 List<String> listaMarca = ['Marca 1', 'Marca 2', 'Marca 3'];
 
-String modeloPrincipal = "Marca";
+String modeloPrincipal = "Modelo";
 List<String> listaModelo = ['Modelo 1', 'Modelo 2', 'Modelo 3'];
 
 String precioPricipal = "Precio";
@@ -84,7 +85,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                     controller: controller,
                     children: [
                       productosServicos(ancho, alto),
-                      Text('Contenedor 2'),
+                      galeria(),
                       Text('Contenedor 3'),
                       Text('Contenedor 4'),
                     ],
@@ -274,6 +275,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
               ),
             ],
           ),
+          WidgetmasBuscado(),
         ],
       ),
     );
@@ -289,7 +291,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30.0),
           ),
-          hintText: '  Busca tu tienda o producto',
+          hintText: '  Buscar producto en "nombre tienda"',
           suffixIcon: MouseRegion(
             cursor: SystemMouseCursors.click,
             child: GestureDetector(
@@ -302,7 +304,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                 ),
               ),
               onTap: () {
-                Navigator.pushNamed(context, 'Buscado', arguments: null);
+                Navigator.pushNamed(context, '', arguments: null);
               },
             ),
           ),
