@@ -21,7 +21,6 @@ class CarruselImagenes extends StatelessWidget {
         itemCount: 10,
         viewportFraction: 0.2,
         control: SwiperControl(),
-        pagination: SwiperPagination(),
       ),
     );
   }
