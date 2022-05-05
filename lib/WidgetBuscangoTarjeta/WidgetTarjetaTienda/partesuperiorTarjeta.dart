@@ -22,10 +22,18 @@ class _partesuperiorTarjetaState extends State<partesuperiorTarjeta> {
                 horizontal: ancho * 0.01, vertical: alto * 0.01),
             child: Align(
               alignment: Alignment.topLeft,
-              child: Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-                size: 20,
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                    size: 40,
+                  ),
+                  onTap: () {
+                    Navigator.pushNamed(context, 'home', arguments: null);
+                  },
+                ),
               ),
             ),
           ),
