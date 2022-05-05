@@ -1,6 +1,6 @@
 import 'package:buscadorbuscango/ClasesPrincipales/Buscango.dart';
-import 'package:buscadorbuscango/WidgetBuscango/Buscador.dart';
 import 'package:buscadorbuscango/WidgetBuscango/PiePagina.dart';
+import 'package:buscadorbuscango/WidgetBuscangoTarjeta/contendorSuperior.dart';
 import 'package:flutter/material.dart';
 
 String categoriaPrincipal = "Categoría";
@@ -24,12 +24,6 @@ List<String> listaModelo = ['Modelo 1', 'Modelo 2', 'Modelo 3'];
 
 String precioPricipal = "Precio";
 List<String> listaPrecio = ['Precio 1', 'Precio 2', 'Precio 3'];
-
-TextStyle textBuscango = TextStyle(
-  fontWeight: FontWeight.bold,
-  color: Colors.blue[900],
-  fontSize: 50.0,
-);
 
 class BuscangoTarjeta extends StatefulWidget {
   @override
@@ -63,32 +57,7 @@ class _BuscangoTarjetaState extends State<BuscangoTarjeta>
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                color: colorGeneral,
-                width: double.infinity,
-                height: alto * 0.15,
-                child: Row(
-                  children: [
-                    Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: ancho * 0.02)),
-                    Container(
-                      child: Text(
-                        'Buscango',
-                        textAlign: TextAlign.center,
-                        style: textBuscango,
-                      ),
-                    ),
-                    Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: ancho * 0.01)),
-                    Container(
-                        width: ancho * 0.55,
-                        height: alto * 0.06,
-                        child: Buscador()),
-                  ],
-                ),
-              ),
+              contendorSuperior(),
               Padding(padding: EdgeInsets.symmetric(vertical: alto * 0.08)),
               Container(
                 width: size.width * 0.8,
