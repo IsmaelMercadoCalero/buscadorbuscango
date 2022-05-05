@@ -26,6 +26,8 @@ List<String> listaModelo = ['Modelo 1', 'Modelo 2', 'Modelo 3'];
 String precioPricipal = "Precio";
 List<String> listaPrecio = ['Precio 1', 'Precio 2', 'Precio 3'];
 
+TextStyle estiloBotones = TextStyle(color: colorGeneral, fontSize: 20);
+
 class tarjetaTienda extends StatefulWidget {
   @override
   State<tarjetaTienda> createState() => _tarjetaTiendaState();
@@ -105,7 +107,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
           Padding(
             padding: EdgeInsets.symmetric(vertical: alto * 0.1),
             child: SizedBox(
-              width: ancho * 0.45,
+              width: ancho * 0.35,
               height: alto * 0.04,
               child: buscador(ancho),
             ),
@@ -119,8 +121,8 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   child: Container(
                     color: Colors.white,
-                    width: ancho * 0.06,
-                    height: alto * 0.03,
+                    width: ancho * 0.08,
+                    height: alto * 0.04,
                     child: Center(
                       child: Container(
                         margin: EdgeInsets.symmetric(horizontal: 5),
@@ -137,7 +139,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                           },
                           hint: Text(
                             categoriaPrincipal,
-                            style: TextStyle(color: colorGeneral),
+                            style: estiloBotones,
                           ),
                         ),
                       ),
@@ -151,8 +153,8 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   child: Container(
                     color: Colors.white,
-                    width: ancho * 0.06,
-                    height: alto * 0.03,
+                    width: ancho * 0.08,
+                    height: alto * 0.04,
                     child: Center(
                       child: Container(
                         margin: EdgeInsets.symmetric(horizontal: 5),
@@ -169,7 +171,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                           },
                           hint: Text(
                             subcategoriaPrincipal,
-                            style: TextStyle(color: colorGeneral),
+                            style: estiloBotones,
                           ),
                         ),
                       ),
@@ -183,8 +185,8 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   child: Container(
                     color: Colors.white,
-                    width: ancho * 0.06,
-                    height: alto * 0.03,
+                    width: ancho * 0.08,
+                    height: alto * 0.04,
                     child: Center(
                       child: Container(
                         margin: EdgeInsets.symmetric(horizontal: 5),
@@ -201,7 +203,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                           },
                           hint: Text(
                             marcaPrincipal,
-                            style: TextStyle(color: colorGeneral),
+                            style: estiloBotones,
                           ),
                         ),
                       ),
@@ -215,8 +217,8 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   child: Container(
                     color: Colors.white,
-                    width: ancho * 0.06,
-                    height: alto * 0.03,
+                    width: ancho * 0.08,
+                    height: alto * 0.04,
                     child: Center(
                       child: Container(
                         margin: EdgeInsets.symmetric(horizontal: 5),
@@ -233,7 +235,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                           },
                           hint: Text(
                             modeloPrincipal,
-                            style: TextStyle(color: colorGeneral),
+                            style: estiloBotones,
                           ),
                         ),
                       ),
@@ -247,8 +249,8 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   child: Container(
                     color: Colors.white,
-                    width: ancho * 0.06,
-                    height: alto * 0.03,
+                    width: ancho * 0.08,
+                    height: alto * 0.04,
                     child: Center(
                       child: Container(
                         margin: EdgeInsets.symmetric(horizontal: 5),
@@ -263,10 +265,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                               precioPricipal = value.toString();
                             })
                           },
-                          hint: Text(
-                            precioPricipal,
-                            style: TextStyle(color: colorGeneral),
-                          ),
+                          hint: Text(precioPricipal, style: estiloBotones),
                         ),
                       ),
                     ),
@@ -290,7 +289,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30.0),
           ),
-          hintText: '  Buscar producto en "nombre tienda"',
+          hintText: '  Busca tu tienda o producto',
           suffixIcon: MouseRegion(
             cursor: SystemMouseCursors.click,
             child: GestureDetector(
@@ -299,10 +298,12 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                 child: Icon(
                   Icons.search,
                   color: Colors.black,
-                  size: 25,
+                  size: 35,
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, 'Buscado', arguments: null);
+              },
             ),
           ),
         ),
