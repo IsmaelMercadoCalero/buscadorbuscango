@@ -35,45 +35,48 @@ class _tarjetaGaleria extends StatelessWidget {
     double ancho = size.width;
     return Container(
       width: size.width * 0.1,
-      height: size.height * 0.6,
+      height: size.height * 0.8,
       decoration: BoxDecoration(
         color: Colors.blueGrey[200],
         borderRadius: BorderRadius.circular(40),
       ),
       child: Row(children: [
         Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(40),
-          ),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
           width: ancho * 0.3,
+          height: alto * 0.6,
           child: Column(
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    vertical: alto * 0.05, horizontal: ancho * 0.015),
-                child: Align(
-                  alignment: Alignment.topLeft,
+              Container(
+                width: ancho * 0.3,
+                height: alto * 0.35,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: ancho * 0.03, vertical: alto * 0.05),
                   child: Text(
                     'Título Galeria',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 30,
+                      fontSize: 40,
                     ),
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    vertical: alto * 0.3, horizontal: ancho * 0.02),
+              Container(
+                width: ancho * 0.3,
+                height: alto * 0.25,
                 child: Align(
-                  alignment: Alignment.bottomRight,
-                  child: Text(
-                    'Caja de texto descripción de galería',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: ancho * 0.02),
+                    child: Text(
+                      'Caja de texto descripción de galería',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                      ),
                     ),
                   ),
                 ),

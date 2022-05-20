@@ -2,7 +2,9 @@ import 'package:buscadorbuscango/WidgetBuscangoTarjeta/WidgetTarjetaTienda/parte
 import 'package:flutter/material.dart';
 import '../ClasesPrincipales/Buscango.dart';
 import '../WidgetBuscango/MasBuscados.dart';
+import 'WidgetTarjetaTienda/Tablas/contacto.dart';
 import 'WidgetTarjetaTienda/Tablas/galeria.dart';
+import 'WidgetTarjetaTienda/Tablas/quienesSomos.dart';
 import 'WidgetTarjetaTienda/controladorTablas.dart';
 
 String categoriaPrincipal = "Categoría";
@@ -86,8 +88,8 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                     children: [
                       productosServicos(ancho, alto),
                       galeria(),
-                      Text('Contenedor 3'),
-                      Text('Contenedor 4'),
+                      quienesSomos(),
+                      contacto(),
                     ],
                   ),
                 )
