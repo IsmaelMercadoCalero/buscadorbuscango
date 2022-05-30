@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../ColoresEstilosTamanos/Colores.dart';
+
 class partesuperiorTarjeta extends StatefulWidget {
   @override
   State<partesuperiorTarjeta> createState() => _partesuperiorTarjetaState();
@@ -12,7 +14,7 @@ class _partesuperiorTarjetaState extends State<partesuperiorTarjeta> {
     double ancho = size.width;
     double alto = size.height;
     return Container(
-      color: Colors.blueGrey,
+      color: colorCabeceraTarjeta,
       width: double.infinity,
       height: alto * 0.3,
       child: Row(

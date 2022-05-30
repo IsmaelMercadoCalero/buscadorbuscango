@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../ColoresEstilosTamanos/Colores.dart';
+
 class quienesSomos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class _tarjetaquienesSomos extends StatelessWidget {
       width: size.width * 0.1,
       height: size.height * 0.7,
       decoration: BoxDecoration(
-        color: Colors.blueGrey[200],
+        color: colorFondoTarjetaGaleria,
         borderRadius: BorderRadius.circular(40),
       ),
       child: Row(children: [

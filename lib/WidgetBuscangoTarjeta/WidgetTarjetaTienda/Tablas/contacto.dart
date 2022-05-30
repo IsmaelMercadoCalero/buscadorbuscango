@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../ColoresEstilosTamanos/Colores.dart';
+import '../../../ColoresEstilosTamanos/Estilos.dart';
+
 class contacto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,8 +24,7 @@ class _tarjetaquienesSomos extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: ancho * 0.001),
           child: Text(
             'Formulario de contacto',
-            style: TextStyle(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+            style: estiloFormulario,
           ),
         ),
         Padding(
@@ -73,7 +75,7 @@ class _tarjetaquienesSomos extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
-                        color: Colors.white),
+                        color: colorDrop),
                   ),
                 ),
                 Align(
@@ -83,7 +85,7 @@ class _tarjetaquienesSomos extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
-                        color: Colors.white),
+                        color: colorDrop),
                   ),
                 ),
                 Align(
@@ -93,7 +95,7 @@ class _tarjetaquienesSomos extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
-                        color: Colors.white),
+                        color: colorDrop),
                   ),
                 ),
               ],

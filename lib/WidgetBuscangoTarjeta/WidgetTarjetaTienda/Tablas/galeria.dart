@@ -2,6 +2,9 @@ import 'package:buscadorbuscango/ClasesPrincipales/Buscango.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 
+import '../../../ColoresEstilosTamanos/Colores.dart';
+import '../../../ColoresEstilosTamanos/Estilos.dart';
+
 class galeria extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -37,7 +40,7 @@ class _tarjetaGaleria extends StatelessWidget {
       width: size.width * 0.1,
       height: size.height * 0.8,
       decoration: BoxDecoration(
-        color: Colors.blueGrey[200],
+        color: colorFondoTarjetaGaleria,
         borderRadius: BorderRadius.circular(40),
       ),
       child: Row(children: [

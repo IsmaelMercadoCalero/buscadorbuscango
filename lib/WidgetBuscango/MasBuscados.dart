@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../ColoresEstilosTamanos/Colores.dart';
+
 class WidgetmasBuscado extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class _tarjetaExpositor extends StatelessWidget {
       width: size.width * 0.2,
       height: size.height * 0.01,
       decoration: BoxDecoration(
-        color: Colors.blueGrey[100],
+        color: colorTarjetaexpositor,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
@@ -124,7 +126,7 @@ class _tarjetaExpositor extends StatelessWidget {
             child: Container(
               width: size.width * 0.04,
               height: size.height * 0.02,
-              color: Colors.blueGrey[300],
+              color: colorTag,
               child: Center(
                 child: Text(
                   'Tag',
@@ -143,7 +145,7 @@ class _tarjetaExpositor extends StatelessWidget {
             child: Container(
               width: size.width * 0.04,
               height: size.height * 0.02,
-              color: Colors.blueGrey[300],
+              color: colorTag,
               child: Center(
                 child: Text(
                   'Tag',
@@ -162,7 +164,7 @@ class _tarjetaExpositor extends StatelessWidget {
             child: Container(
               width: size.width * 0.04,
               height: size.height * 0.02,
-              color: Colors.blueGrey[300],
+              color: colorTag,
               child: Center(
                 child: Text(
                   'Tag',

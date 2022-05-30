@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../ColoresEstilosTamanos/Colores.dart';
+
 class UltimosMiembros extends StatelessWidget {
   int numero = 0;
   UltimosMiembros(int i) {
@@ -42,7 +44,7 @@ class _tarjetaExpositor extends StatelessWidget {
         width: size.width * 0.2,
         height: size.height * 0.1,
         decoration: BoxDecoration(
-          color: Colors.blueGrey[100],
+          color: colorTarjetaexpositor,
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
@@ -175,7 +177,7 @@ class _tarjetaExpositor extends StatelessWidget {
             child: Container(
               width: size.width * 0.04,
               height: size.height * 0.02,
-              color: Colors.blueGrey[300],
+              color: colorTag,
               child: Center(
                 child: Text(
                   'Tag',
@@ -194,7 +196,7 @@ class _tarjetaExpositor extends StatelessWidget {
             child: Container(
               width: size.width * 0.04,
               height: size.height * 0.02,
-              color: Colors.blueGrey[300],
+              color: colorTag,
               child: Center(
                 child: Text(
                   'Tag',
@@ -213,7 +215,7 @@ class _tarjetaExpositor extends StatelessWidget {
             child: Container(
               width: size.width * 0.04,
               height: size.height * 0.02,
-              color: Colors.blueGrey[300],
+              color: colorTag,
               child: Center(
                 child: Text(
                   'Tag',

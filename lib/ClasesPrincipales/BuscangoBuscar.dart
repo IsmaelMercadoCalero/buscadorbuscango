@@ -1,6 +1,7 @@
 import 'package:buscadorbuscango/WidgetBuscango/UltimosMiembros.dart';
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
+import '../ColoresEstilosTamanos/Colores.dart';
 import '../WidgetBuscango/PiePagina.dart';
 import '../WidgetBuscango/Buscador.dart';
 import '../WidgetBuscango/TextBuscango.dart';
@@ -18,8 +19,6 @@ List<String> listasubCategoria = [
 //Lista de gps
 String ubicacionPrincipal = "Ubucación";
 List<String> listaUbicacion = ['Ubucación 1', 'Ubucación 2', 'Ubucación 3'];
-//Color azul principal del Buscango
-Color colorGeneral = Colors.blue;
 final isSelected = <bool>[false, false];
 
 class BuscangoBuscar extends StatefulWidget {
@@ -34,7 +33,7 @@ class _BuscangoBuscarState extends State<BuscangoBuscar> {
     return Hero(
       tag: 'Buscador',
       child: Scaffold(
-          backgroundColor: Colors.grey[300],
+          backgroundColor: colorFondoBuscango,
           resizeToAvoidBottomInset: false,
           body: Container(
             child: SingleChildScrollView(
@@ -96,8 +95,8 @@ class _BuscangoBuscarState extends State<BuscangoBuscar> {
               [colorGeneral],
               [colorGeneral]
             ],
-            activeFgColor: Colors.white,
-            inactiveBgColor: Colors.white,
+            activeFgColor: colorBotones,
+            inactiveBgColor: colorBotones,
             inactiveFgColor: colorGeneral,
             initialLabelIndex: 0,
             totalSwitches: 2,
@@ -113,7 +112,7 @@ class _BuscangoBuscarState extends State<BuscangoBuscar> {
           ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(50)),
             child: Container(
-              color: Colors.white,
+              color: colorDrop,
               width: size.width * 0.1,
               height: size.height * 0.06,
               child: Row(
@@ -152,7 +151,7 @@ class _BuscangoBuscarState extends State<BuscangoBuscar> {
           ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(50)),
             child: Container(
-              color: Colors.white,
+              color: colorDrop,
               width: size.width * 0.1,
               height: size.height * 0.06,
               child: Row(
@@ -191,7 +190,7 @@ class _BuscangoBuscarState extends State<BuscangoBuscar> {
           ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(50)),
             child: Container(
-              color: Colors.white,
+              color: colorDrop,
               width: size.width * 0.1,
               height: size.height * 0.06,
               child: Row(

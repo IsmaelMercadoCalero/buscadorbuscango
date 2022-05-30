@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
 
-TextStyle textBuscango = TextStyle(
-  fontWeight: FontWeight.bold,
-  color: Colors.blue[900],
-  fontSize: 50.0,
-);
-
-TextStyle textSomos = TextStyle(
-  fontWeight: FontWeight.bold,
-  color: Colors.white,
-  fontSize: 20.0,
-);
+import '../ColoresEstilosTamanos/Colores.dart';
+import '../ColoresEstilosTamanos/Estilos.dart';
 
 class PiePagina extends StatelessWidget {
   @override
@@ -19,7 +10,7 @@ class PiePagina extends StatelessWidget {
     return Container(
       width: size.width * 1,
       height: size.height * 0.25,
-      color: Colors.blue,
+      color: colorGeneral,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
@@ -48,7 +39,7 @@ class PiePagina extends StatelessWidget {
       child: Text(
         'BUSCANGO',
         textAlign: TextAlign.center,
-        style: textBuscango,
+        style: textBuscangoPiePagina,
         overflow: TextOverflow.clip,
       ),
     );
@@ -73,8 +64,8 @@ class PiePagina extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             fixedSize: Size(380, 50),
             shape: StadiumBorder(),
-            primary: Colors.white,
-            onPrimary: Colors.blue,
+            primary: colorDrop,
+            onPrimary: colorGeneral,
           ),
           onPressed: () {},
           icon: Icon(Icons.person),

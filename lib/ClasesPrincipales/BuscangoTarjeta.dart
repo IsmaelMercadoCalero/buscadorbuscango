@@ -3,6 +3,8 @@ import 'package:buscadorbuscango/WidgetBuscangoTarjeta/contendorSuperior.dart';
 import 'package:buscadorbuscango/WidgetBuscangoTarjeta/tarjetaTienda.dart';
 import 'package:flutter/material.dart';
 
+import '../ColoresEstilosTamanos/Colores.dart';
+
 class BuscangoTarjeta extends StatefulWidget {
   @override
   State<BuscangoTarjeta> createState() => _BuscangoTarjetaState();
@@ -14,7 +16,7 @@ class _BuscangoTarjetaState extends State<BuscangoTarjeta> {
     final size = MediaQuery.of(context).size;
     double alto = size.height;
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: colorBotones,
       resizeToAvoidBottomInset: false,
       body: Container(
         child: SingleChildScrollView(

@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
-//Estilo del TextField Busca tu tienda o producto
-TextStyle textBuscango = TextStyle(
-  fontWeight: FontWeight.bold,
-  color: Colors.blue,
-  fontSize: 50.0,
-);
+import '../ColoresEstilosTamanos/Estilos.dart';
 
 class TextBuscango extends StatelessWidget {
   @override

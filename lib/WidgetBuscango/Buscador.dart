@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../ColoresEstilosTamanos/Colores.dart';
+
 class Buscador extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class Buscador extends StatelessWidget {
         children: [
           Material(
             elevation: 20,
-            shadowColor: Colors.black,
+            shadowColor: colorSombreado,
             borderRadius: BorderRadius.circular(30),
             child: TextField(
               decoration: InputDecoration(
@@ -27,7 +29,7 @@ class Buscador extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: ancho * 0.01),
                       child: Icon(
                         Icons.search,
-                        color: Colors.black,
+                        color: colorIconoBuscador,
                         size: 30,
                       ),
                     ),
