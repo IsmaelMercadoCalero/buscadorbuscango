@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import '../ClasesPrincipales/Buscango.dart';
+import '../ColoresEstilosTamanos/Colores.dart';
+import '../ColoresEstilosTamanos/Estilos.dart';
 import '../WidgetBuscango/Buscador.dart';
-
-TextStyle textBuscango = TextStyle(
-  fontWeight: FontWeight.bold,
-  color: Colors.blue[900],
-  fontSize: 50.0,
-);
 
 class contendorSuperior extends StatefulWidget {
   @override

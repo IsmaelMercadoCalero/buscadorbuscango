@@ -1,8 +1,10 @@
 import 'package:buscadorbuscango/WidgetBuscangoTarjeta/WidgetTarjetaTienda/partesuperiorTarjeta.dart';
 import 'package:flutter/material.dart';
-import '../ClasesPrincipales/Buscango.dart';
+import '../ColoresEstilosTamanos/Colores.dart';
 import '../WidgetBuscango/MasBuscados.dart';
+import 'WidgetTarjetaTienda/Tablas/contacto.dart';
 import 'WidgetTarjetaTienda/Tablas/galeria.dart';
+import 'WidgetTarjetaTienda/Tablas/quienesSomos.dart';
 import 'WidgetTarjetaTienda/controladorTablas.dart';
 
 String categoriaPrincipal = "Categoría";
@@ -58,7 +60,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
       width: ancho * 0.8,
       height: alto * 2,
       decoration: BoxDecoration(
-        color: Colors.blueGrey[100],
+        color: colorTarjetaexpositor,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
@@ -86,8 +88,8 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                     children: [
                       productosServicos(ancho, alto),
                       galeria(),
-                      Text('Contenedor 3'),
-                      Text('Contenedor 4'),
+                      quienesSomos(),
+                      contacto(),
                     ],
                   ),
                 )
@@ -121,7 +123,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   child: Container(
-                    color: Colors.white,
+                    color: colorDrop,
                     width: ancho * 0.08,
                     height: alto * 0.04,
                     child: Center(
@@ -153,7 +155,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   child: Container(
-                    color: Colors.white,
+                    color: colorDrop,
                     width: ancho * 0.08,
                     height: alto * 0.04,
                     child: Center(
@@ -185,7 +187,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   child: Container(
-                    color: Colors.white,
+                    color: colorDrop,
                     width: ancho * 0.08,
                     height: alto * 0.04,
                     child: Center(
@@ -217,7 +219,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   child: Container(
-                    color: Colors.white,
+                    color: colorDrop,
                     width: ancho * 0.08,
                     height: alto * 0.04,
                     child: Center(
@@ -249,7 +251,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                   child: Container(
-                    color: Colors.white,
+                    color: colorDrop,
                     width: ancho * 0.08,
                     height: alto * 0.04,
                     child: Center(
@@ -284,7 +286,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
   Widget buscador(double ancho) {
     return Material(
       elevation: 20,
-      shadowColor: Colors.black,
+      shadowColor: colorSombreado,
       borderRadius: BorderRadius.circular(30),
       child: TextField(
         decoration: InputDecoration(
@@ -299,7 +301,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
                 padding: EdgeInsets.symmetric(horizontal: ancho * 0.01),
                 child: Icon(
                   Icons.search,
-                  color: Colors.black,
+                  color: colorIconoBuscador,
                   size: 35,
                 ),
               ),

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import '../ColoresEstilosTamanos/Colores.dart';
 import '../WidgetBuscango/PiePagina.dart';
 import '../WidgetBuscango/UltimosMiembros.dart';
 import '../WidgetBuscango/MasBuscados.dart';
 import '../WidgetBuscango/Buscador.dart';
 import '../WidgetBuscango/CarruselImagenes.dart';
 import '../WidgetBuscango/TextBuscango.dart';
-
-Color colorGeneral = Colors.blue;
 
 //AGREGAR EFECTOS DE RATON
 class Buscango extends StatefulWidget {
@@ -21,7 +20,7 @@ class _BuscangoState extends State<Buscango> {
     double ancho = size.width;
     double alto = size.height;
     return Scaffold(
-        backgroundColor: Colors.grey[300],
+        backgroundColor: colorFondoBuscango,
         resizeToAvoidBottomInset: false,
         body: Container(
           child: SingleChildScrollView(
