@@ -20,4 +20,6 @@ TextStyle textBuscangoPiePagina = TextStyle(
 );
 
 TextStyle estiloFormulario =
-    TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold);
+    TextStyle(fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold);
+
+TextStyle estiloContacto = TextStyle(fontSize: 25, fontWeight: FontWeight.bold);
