@@ -1,40 +1,36 @@
 import 'package:flutter/material.dart';
-
-import '../../../ColoresEstilosTamanos/Colores.dart';
 import '../../../ColoresEstilosTamanos/Estilos.dart';
 
 class contacto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return _tarjetaquienesSomos();
+    return _contenedorContacto();
   }
 }
 
-class _tarjetaquienesSomos extends StatelessWidget {
+class _contenedorContacto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     double alto = size.height;
     double ancho = size.width;
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: ancho * 0.001),
+          padding: EdgeInsets.symmetric(
+              vertical: alto * 0.08, horizontal: ancho * 0.15),
           child: Text(
             'Formulario de contacto',
             style: estiloFormulario,
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: ancho * 0.1),
+          padding: EdgeInsets.symmetric(horizontal: ancho * 0.2),
           child: Container(
-            width: ancho * 0.4,
-            height: alto * 0.8,
+            width: ancho * 0.3,
+            height: alto * 0.3,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextField(
                   decoration: InputDecoration(
@@ -44,12 +40,15 @@ class _tarjetaquienesSomos extends StatelessWidget {
                     hintText: '  Nombre',
                   ),
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: alto * 0.03),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      hintText: '  Correo electrónico',
                     ),
-                    hintText: '  Correo electrónico',
                   ),
                 ),
                 TextField(
@@ -60,48 +59,65 @@ class _tarjetaquienesSomos extends StatelessWidget {
                     hintText: '   Número de teléfono',
                   ),
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: alto * 0.03),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      hintText: '  Escribe tu mensaje',
                     ),
-                    hintText: '  Escribe tu mensaje',
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Teléfono',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: colorDrop),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Email',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: colorDrop),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Ubicación',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: colorDrop),
                   ),
                 ),
               ],
             ),
           ),
         ),
+        Padding(
+          padding: EdgeInsets.symmetric(
+              vertical: alto * 0.06, horizontal: ancho * 0.15),
+          child: Text(
+            'Contacto',
+            style: estiloFormulario,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: ancho * 0.2),
+          child: Container(
+            width: ancho * 0.3,
+            height: alto * 0.15,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '  Telefono',
+                  style: estiloContacto,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: alto * 0.03),
+                  child: Text(
+                    '  Email',
+                    style: estiloContacto,
+                  ),
+                ),
+                Text(
+                  '  Dirección',
+                  style: estiloContacto,
+                ),
+              ],
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: ancho * 0.15, vertical: alto * 0.1),
+          child: Text(
+            'Donde estamos',
+            style: estiloFormulario,
+          ),
+        ),
+        //PEDIR AYUDA A ALEX MAÑANA
       ],
     );
   }
