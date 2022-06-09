@@ -12,6 +12,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String opcion = "";
     return MaterialApp(
       title: 'Buscango',
       //Este es el nombre de la primera ruta a mostrar
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         //Asignamos la clase de la primera ruta
         'home': (_) => Buscango(),
-        'Buscado': (_) => BuscangoBuscar(),
+        'Buscado': (_) => BuscangoBuscar(opcion),
         'TarjetaBuscada': (_) => BuscangoTarjeta(),
       },
     );

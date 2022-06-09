@@ -62,6 +62,10 @@ class Buscador extends StatelessWidget {
               shadowColor: colorSombreado,
               borderRadius: BorderRadius.circular(30),
               child: TextField(
+                onSubmitted: (value) {
+                  Navigator.pushNamed(context, 'Buscado', arguments: null);
+                },
+                textInputAction: TextInputAction.search,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30.0),

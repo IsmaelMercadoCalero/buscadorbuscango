@@ -22,11 +22,16 @@ List<String> listaUbicacion = ['Ubucación 1', 'Ubucación 2', 'Ubucación 3'];
 final isSelected = <bool>[false, false];
 
 class BuscangoBuscar extends StatefulWidget {
+  String opcion;
+  BuscangoBuscar(this.opcion);
   @override
-  State<BuscangoBuscar> createState() => _BuscangoBuscarState();
+  State<BuscangoBuscar> createState() => _BuscangoBuscarState(opcion);
 }
 
 class _BuscangoBuscarState extends State<BuscangoBuscar> {
+  String opcion;
+  _BuscangoBuscarState(this.opcion);
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -81,6 +86,8 @@ class _BuscangoBuscarState extends State<BuscangoBuscar> {
 
   Widget Buttons(final size) {
     double ancho = size.width;
+    String tienda = 'tienda';
+    String producto = 'producto';
     return Center(
         child: Container(
       width: size.width * 0.6,
@@ -103,7 +110,20 @@ class _BuscangoBuscarState extends State<BuscangoBuscar> {
             labels: ['Tiendas', 'Productos'],
             radiusStyle: true,
             onToggle: (index) {
-              print('Has seleccionado: $index');
+              print(index);
+              if (index == 0) {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return BuscangoBuscar(tienda);
+                  },
+                ));
+              } else if (index == 'Productos') {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return BuscangoBuscar(producto);
+                  },
+                ));
+              }
             },
           ),
           SizedBox(

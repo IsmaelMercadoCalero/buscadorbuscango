@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import '../ColoresEstilosTamanos/Colores.dart';
+import '../WidgetBuscango/MasBuscados.dart';
 import '../WidgetBuscango/PiePagina.dart';
 import '../WidgetBuscango/UltimosMiembros.dart';
-import '../WidgetBuscango/MasBuscados.dart';
+
 import '../WidgetBuscango/Buscador.dart';
 import '../WidgetBuscango/CarruselImagenes.dart';
 import '../WidgetBuscango/TextBuscango.dart';
@@ -54,7 +55,7 @@ class _BuscangoState extends State<Buscango> {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: alto * 0.015),
                 ),
-                WidgetmasBuscado(),
+                MasBuscado(),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: alto * 0.01),
                 ),

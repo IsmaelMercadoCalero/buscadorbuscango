@@ -277,7 +277,7 @@ class _tarjetaTiendaState extends State<tarjetaTienda>
               ),
             ],
           ),
-          WidgetmasBuscado(),
+          MasBuscado(),
         ],
       ),
     );
