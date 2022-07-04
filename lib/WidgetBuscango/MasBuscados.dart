@@ -1,10 +1,17 @@
+import 'package:buscadorbuscango/models/resultMasBuscados.dart';
+import 'package:buscadorbuscango/providers/masbuscados_provider.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
 import '../ColoresEstilosTamanos/Colores.dart';
 
 class MasBuscado extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final masBuscadosProvaider = Provider.of<MasBuscadosProvaider>(context);
+    final List<ResultMasBuscados> masBuscados =
+        masBuscadosProvaider.onDisplayMasbuscados;
+    print("Clase MasBuscados");
+    print(masBuscados);
     final size = MediaQuery.of(context).size;
     return Container(
       width: size.width * 0.8,
@@ -12,11 +19,18 @@ class MasBuscado extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 3,
-                itemBuilder: (BuildContext context, int index) =>
-                    _tarjetaExpositor()),
+            child: FutureBuilder(builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Center(
+                  child: CircularProgressIndicator.adaptive(),
+                );
+              }
+              return ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 3,
+                  itemBuilder: (BuildContext context, int index) =>
+                      _tarjetaExpositor());
+            }),
           ),
         ],
       ),
@@ -28,8 +42,6 @@ class _tarjetaExpositor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    double ancho = size.width;
-    double alto = size.height;
     return Container(
       width: size.width * 0.2,
       height: size.height * 0.01,

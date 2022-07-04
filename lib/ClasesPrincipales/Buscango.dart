@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../ColoresEstilosTamanos/Colores.dart';
 import '../WidgetBuscango/MasBuscados.dart';
 import '../WidgetBuscango/PiePagina.dart';
@@ -7,6 +8,8 @@ import '../WidgetBuscango/UltimosMiembros.dart';
 import '../WidgetBuscango/Buscador.dart';
 import '../WidgetBuscango/CarruselImagenes.dart';
 import '../WidgetBuscango/TextBuscango.dart';
+import '../models/resultMasBuscados.dart';
+import '../providers/masbuscados_provider.dart';
 
 //AGREGAR EFECTOS DE RATON
 class Buscango extends StatefulWidget {
@@ -17,6 +20,11 @@ class Buscango extends StatefulWidget {
 class _BuscangoState extends State<Buscango> {
   @override
   Widget build(BuildContext context) {
+    final masBuscadosProvaider = Provider.of<MasBuscadosProvaider>(context);
+    final List<ResultMasBuscados> masBuscados =
+        masBuscadosProvaider.onDisplayMasbuscados;
+    print("Clase Buscango");
+    print(masBuscados);
     final size = MediaQuery.of(context).size;
     double ancho = size.width;
     double alto = size.height;

@@ -1,3 +1,4 @@
+import 'package:buscadorbuscango/WidgetBuscangoTarjeta/googlemaps.dart';
 import 'package:flutter/material.dart';
 import '../../../ColoresEstilosTamanos/Estilos.dart';
 
@@ -8,6 +9,7 @@ class contacto extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class _contenedorContacto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -112,12 +114,25 @@ class _contenedorContacto extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(
               horizontal: ancho * 0.15, vertical: alto * 0.1),
-          child: Text(
-            'Donde estamos',
-            style: estiloFormulario,
+          child: Container(
+            width: ancho * 0.5,
+            height: alto * 0.5,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Donde estamos',
+                  style: estiloFormulario,
+                ),
+                Padding(padding: EdgeInsets.symmetric(vertical: alto * 0.01)),
+                Container(
+                    width: ancho * 0.5,
+                    height: alto * 0.45,
+                    child: googlemaps())
+              ],
+            ),
           ),
         ),
-        //PEDIR AYUDA A ALEX MAÑANA
       ],
     );
   }

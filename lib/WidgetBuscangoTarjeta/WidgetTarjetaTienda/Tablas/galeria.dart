@@ -1,15 +1,12 @@
-import 'package:buscadorbuscango/ClasesPrincipales/Buscango.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-
 import '../../../ColoresEstilosTamanos/Colores.dart';
-import '../../../ColoresEstilosTamanos/Estilos.dart';
 
 class galeria extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    double ancho = size.width;
+
     double alto = size.height;
     return Container(
       width: size.width * 0.001,

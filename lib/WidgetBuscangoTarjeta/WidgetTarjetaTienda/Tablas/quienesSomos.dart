@@ -6,7 +6,6 @@ class quienesSomos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    double ancho = size.width;
     double alto = size.height;
     return Container(
       width: size.width * 0.001,
